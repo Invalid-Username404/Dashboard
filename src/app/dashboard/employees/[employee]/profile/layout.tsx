@@ -6,8 +6,14 @@ export async function generateMetadata({
   params: { employee: string };
 }): Promise<Metadata> {
   return {
-    title: `${params.employee} - Cyparta`,
-    description: `${params.employee} Cyparta profile`,
+    title: `${
+      params.employee.replace("-", " ").charAt(0).toUpperCase() +
+      params.employee.replace("-", " ").slice(1)
+    } - Cyparta`,
+    description: `${
+      params.employee.replace("-", " ").charAt(0).toUpperCase() +
+      params.employee.replace("-", " ").slice(1)
+    } Cyparta profile`,
   };
 }
 
