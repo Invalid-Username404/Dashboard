@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="password"] {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px; /* Adjust the spacing between stars */
+  -webkit-text-security: disc; /* For Webkit browsers */
+}

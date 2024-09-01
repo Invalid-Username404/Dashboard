@@ -1,0 +1,6 @@
+{
+  "git.decorations.enabled": true,
+  "cursor-retrieval.canAttemptGithubLogin": true,
+  "cursor.general.gitGraphIndexing": "default",
+  "git.enabled": true
+}
