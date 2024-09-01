@@ -8,8 +8,8 @@ export function ProfileNavigator({
   setActiveTab: (tab: string) => void;
 }) {
   return (
-    <nav className="flex gap-4">
-      <ul className="flex gap-4 border-b-2 border-gray-200">
+    <nav className="flex gap-4 ">
+      <ul className="flex flex-wrap gap-4 border-b-2 border-gray-200">
         {navigationItems.map((item) => (
           <li key={item.name}>
             <button
