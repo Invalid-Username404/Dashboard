@@ -11,8 +11,8 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
   const adminPhoto = "/mariam-ali.png";
 
   return (
-    <div className="flex flex-col md:flex-row px-4 lg:px-5 gap-4 lg:gap-8">
-      <header className="lg:hidden mb-4">
+    <div className="flex flex-col md:flex-row px-4 md:px-5 gap-4 md:gap-8">
+      <header className="md:hidden mb-4">
         <Image
           src="/cyparta-logo.svg"
           alt="Cyparta Logo"
@@ -21,13 +21,13 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
           priority
         />
       </header>
-      <nav className="lg:basis-1/4 py-2">
+      <nav className="md:basis-1/4 py-2">
         <DashboardSideBar />
       </nav>
-      <main className="lg:basis-3/4 flex flex-col">
+      <main className="md:basis-3/4 flex flex-col">
         <div className="mt-2 flex items-center justify-end">
           <button
-            className="bg-gray-100 mr-4 rounded-lg p-2"
+            className="bg-gray-100 mr-4 rounded-md p-2"
             aria-label="Notifications"
           >
             <Image src="/notification.svg" alt="" width={24} height={24} />
