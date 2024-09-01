@@ -20,7 +20,7 @@ export function ArrowButton({
 
   return (
     <button
-      className={`flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all duration-300 ${
+      className={`flex items-center justify-center w-6 h-6 rounded-full hover:scale-110 transition-all duration-300 focus:outline-none text-gray-700 ${
         isOpen ? "rotate-90 " : ""
       }`}
       onClick={handleClick}

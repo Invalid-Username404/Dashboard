@@ -7,7 +7,7 @@ export default function Profile({ params }: { params: { employee: string } }) {
   const { employee } = params;
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 ">
       <nav aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-sm font-medium">
           <li>Employees</li>
