@@ -11,7 +11,7 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
   const adminPhoto = "/mariam-ali.png";
 
   return (
-    <div className="flex flex-col lg:flex-row px-4 lg:px-5 gap-4 lg:gap-8">
+    <div className="flex flex-col md:flex-row px-4 lg:px-5 gap-4 lg:gap-8">
       <header className="lg:hidden mb-4">
         <Image
           src="/cyparta-logo.svg"
