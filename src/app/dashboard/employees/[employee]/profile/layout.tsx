@@ -5,15 +5,13 @@ export async function generateMetadata({
 }: {
   params: { employee: string };
 }): Promise<Metadata> {
+  const employeeName = params.employee
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
   return {
-    title: `${
-      params.employee.replace("-", " ").charAt(0).toUpperCase() +
-      params.employee.replace("-", " ").slice(1)
-    } - Cyparta`,
-    description: `${
-      params.employee.replace("-", " ").charAt(0).toUpperCase() +
-      params.employee.replace("-", " ").slice(1)
-    } Cyparta profile`,
+    title: `${employeeName} - Cyparta`,
+    description: `${employeeName} Cyparta profile`,
   };
 }
 
