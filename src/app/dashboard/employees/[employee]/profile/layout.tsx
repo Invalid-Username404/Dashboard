@@ -6,8 +6,8 @@ export async function generateMetadata({
   params: { employee: string };
 }): Promise<Metadata> {
   return {
-    title: `${params.employee}'s Profile - Cyparta`,
-    description: "View employee profile",
+    title: `${params.employee} - Cyparta`,
+    description: `${params.employee} Cyparta profile`,
   };
 }
 
