@@ -1,36 +1,10 @@
 import Image from "next/image";
 import { PasswordInput } from "@/components/PasswordInput";
-import { redirect } from "next/navigation";
+import { handleLogin } from "@/app/api/login";
 
 export const metadata = {
   title: "Login",
 };
-
-async function handleLogin(formData: FormData) {
-  "use server";
-  const email = formData.get("email") as string;
-  const password = formData.get("password") as string;
-
-  const response = await fetch(
-    "https://cyparta-backend-gf7qm.ondigitalocean.app/api/login/",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        email,
-        password,
-      }),
-    }
-  );
-  if (response.ok) {
-    const data = await response.json();
-    redirect("/dashboard");
-  } else {
-    console.log("Login failed");
-  }
-}
 
 export default function Login() {
   return (

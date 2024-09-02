@@ -1,10 +1,16 @@
 import Image from "next/image";
 import { EditButton } from "@/components/EditButton";
 import { ProfileInformation } from "@/components/ProfileInformation";
+import { getProfile } from "@/app/api/getProfile";
 
-export default function Profile({ params }: { params: { employee: string } }) {
-  // TODO: get employee data from database
+export default async function Profile({
+  params,
+}: {
+  params: { employee: string };
+}) {
   const { employee } = params;
+  const profile = await getProfile();
+  console.log(profile);
 
   return (
     <div className="flex flex-col gap-6 ">
