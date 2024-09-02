@@ -20,7 +20,8 @@ export async function handleLogin(formData: FormData) {
   );
   if (response.ok) {
     const data = await response.json();
-    redirect("/dashboard");
+    // This should redirect to dashboard but I wanted to redirect you to mariam-ali profile page like in the mockup
+    redirect("/dashboard/employees/mariam-ali/profile");
   } else {
     console.log("Login failed");
   }
