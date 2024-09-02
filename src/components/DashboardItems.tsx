@@ -68,14 +68,14 @@ export function DashboardItems({ admin }: { admin: string }) {
           </div>
           {item.items && openedItems.includes(index) && (
             <ul
-              className="ml-8 md:ml-20 mt-1 md:mt-3 text-xs md:text-base font-semibold"
+              className="ml-8  md:ml-20 mt-1 md:mt-3 text-xs md:text-base font-semibold"
               id={`submenu-${index}`}
               role="menu"
             >
               {item.items.map((childItem) => (
                 <li
                   key={childItem.name}
-                  className="flex items-center gap-1 md:gap-4 py-1 md:py-2"
+                  className="flex mb-2 items-center gap-1 md:gap-4 py-1 md:py-2"
                   role="none"
                 >
                   <Link
