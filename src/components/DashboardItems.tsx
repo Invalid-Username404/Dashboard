@@ -68,7 +68,7 @@ export function DashboardItems({ admin }: { admin: string }) {
           </div>
           {item.items && openedItems.includes(index) && (
             <ul
-              className="ml-4 md:ml-20 mt-1 md:mt-3 text-xs md:text-base font-semibold"
+              className="ml-8 md:ml-20 mt-1 md:mt-3 text-xs md:text-base font-semibold"
               id={`submenu-${index}`}
               role="menu"
             >
