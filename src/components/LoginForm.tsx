@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { PasswordInput } from "@/components/PasswordInput";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 
 export function LoginForm({
   action,
