@@ -1,7 +1,13 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-export function PasswordInput({ id, name }: { id: string; name: string }) {
+interface PasswordInputProps {
+  id: string;
+  name: string;
+  disabled?: boolean;
+}
+
+export function PasswordInput({ id, name, disabled }: PasswordInputProps) {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="relative">
@@ -11,6 +17,7 @@ export function PasswordInput({ id, name }: { id: string; name: string }) {
         className="w-full p-2 px-4 mt-2 rounded-md border-2 border-gray-300 pr-10" // Add padding to the right for the button
         id={id}
         name={name}
+        disabled={disabled}
       />
       <button
         className="absolute right-2 top-[60%] transform -translate-y-1/2" // Center the button vertically
