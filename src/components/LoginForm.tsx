@@ -3,10 +3,15 @@ import { useState } from "react";
 import { PasswordInput } from "@/components/PasswordInput";
 import { useRouter } from "next/navigation";
 
+type Result = {
+  success: boolean;
+  error?: string;
+};
+
 export function LoginForm({
   action,
 }: {
-  action: (formData: FormData) => Promise<void>;
+  action: (formData: FormData) => Promise<Result>;
 }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -16,10 +21,15 @@ export function LoginForm({
     setIsLoading(true);
     setError("");
     try {
-      await action(formData);
-      router.push("/dashboard");
+      const result = await action(formData);
+      if (result.success) {
+        // This should redirect to dashboard but I wanted to redirect you to mariam-ali profile page like in the mockup
+        router.push("/dashboard/employees/mariam-ali/profile");
+      } else {
+        setError(result.error || "Invalid email or password");
+      }
     } catch (err) {
-      setError("Invalid email or password");
+      setError("An unexpected error occurred");
     } finally {
       setIsLoading(false);
     }

@@ -4,25 +4,31 @@ export async function handleLogin(formData: FormData) {
   "use server";
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
+  try {
+    const response = await fetch(
+      "https://cyparta-backend-gf7qm.ondigitalocean.app/api/login/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          email,
+          password,
+        }),
+      }
+    );
 
-  const response = await fetch(
-    "https://cyparta-backend-gf7qm.ondigitalocean.app/api/login/",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        email,
-        password,
-      }),
-    }
-  );
-  if (response.ok) {
     const data = await response.json();
-    // This should redirect to dashboard but I wanted to redirect you to mariam-ali profile page like in the mockup
-    redirect("/dashboard/employees/mariam-ali/profile");
-  } else {
-    throw new Error("Login failed");
+    if (response.ok) {
+      return { success: true, data };
+    } else {
+      return {
+        success: false,
+        error: data.error || "Invalid email or password",
+      };
+    }
+  } catch (error) {
+    return { success: false, error: "An unexpected error occurred" };
   }
 }
