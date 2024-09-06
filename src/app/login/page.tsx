@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { LoginForm } from "@/components/LoginForm";
-import { handleLogin } from "@/app/api/login";
+import { handleLogin } from "@/utils/api/login";
 
 export const metadata = {
   title: "Login",
@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function Login() {
   return (
-    <div className="flex flex-col items-center justify-evenly h-screen p-4 sm:p-8">
+    <div className="bg-primary flex flex-col items-center justify-evenly h-screen p-4 sm:p-8">
       <Image
         src="/cyparta-logo.svg"
         alt="Cyparta Logo"

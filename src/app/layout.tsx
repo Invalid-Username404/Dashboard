@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 
+import { ThemeProvider } from "@/contexts/ThemeContext";
+
 const cairo = Cairo({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
@@ -38,7 +40,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cairo.className}>{children}</body>
+      <ThemeProvider>
+        <body className={`${cairo.className} bg-white dark:bg-black`}>
+          {children}
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

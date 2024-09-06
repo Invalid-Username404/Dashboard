@@ -28,7 +28,7 @@ export function ArrowButton({
       aria-controls={ariaControls}
     >
       <Image
-        className="transition-transform"
+        className="transition-transform dark:invert"
         src="/arrow-right.svg"
         alt={isOpen ? "Collapse" : "Expand"}
         width={10}

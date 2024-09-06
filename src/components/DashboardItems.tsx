@@ -32,13 +32,13 @@ export function DashboardItems({ admin }: { admin: string }) {
   );
 
   return (
-    <ul className="flex flex-col gap-1 md:gap-4 relative" role="menu">
+    <ul className="flex  flex-col gap-1 md:gap-4 relative" role="menu">
       {items.map((item, index) => (
         <li className="flex flex-col w-full" key={item.name} role="none">
           <div
             className={`flex p-2 md:p-5 text-xs md:text-base font-semibold items-center gap-1 md:gap-4 w-full rounded-r-full border-r-red-50 border-l-4 ${
               currentPath === item.url
-                ? "bg-[#f9eaeb] border-[#EE232F]"
+                ? "bg-[#f9eaeb] border-[#EE232F] dark:bg-[#701010] dark:border-[#be4242] dark:text-white"
                 : "border-transparent"
             }`}
           >
@@ -54,6 +54,7 @@ export function DashboardItems({ admin }: { admin: string }) {
                 width={14}
                 height={14}
                 aria-hidden="true"
+                className="dark:invert"
               />
               <span>{item.name}</span>
             </Link>
@@ -83,8 +84,8 @@ export function DashboardItems({ admin }: { admin: string }) {
                     className={`${
                       currentPath.split("/").pop() ===
                       childItem.url.split("/").pop()
-                        ? "text-[#EE232F]"
-                        : "text-black"
+                        ? "text-[#EE232F] dark:text-[#be4242]"
+                        : "text-black dark:text-white"
                     } flex items-center gap-1 md:gap-4`}
                     role="menuitem"
                     aria-current={
@@ -97,6 +98,7 @@ export function DashboardItems({ admin }: { admin: string }) {
                       width={12}
                       height={12}
                       aria-hidden="true"
+                      className="dark:invert"
                     />
                     <span>{childItem.name}</span>
                   </Link>

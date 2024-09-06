@@ -8,3 +8,36 @@ input[type="password"] {
   letter-spacing: 2px; /* Adjust the spacing between stars */
   -webkit-text-security: disc; /* For Webkit browsers */
 }
+
+@layer utilities {
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* Dark mode scrollbar styles */
+  .dark ::-webkit-scrollbar-track {
+    background: #1a202c;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #4a5568;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+  }
+}

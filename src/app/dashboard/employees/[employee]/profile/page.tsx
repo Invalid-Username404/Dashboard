@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { EditButton } from "@/components/EditButton";
 import { ProfileInformation } from "@/components/ProfileInformation";
-import { getProfile } from "@/app/api/getProfile";
+import { getProfile } from "@/utils/api/getProfile";
 
 export default async function Profile({
   params,
@@ -10,21 +10,26 @@ export default async function Profile({
 }) {
   const { employee } = params;
   const profile = await getProfile();
-  console.log(profile);
 
   return (
-    <div className="flex flex-col gap-6 ">
+    <div className="flex flex-col gap-6 text-black dark:text-white">
       <nav aria-label="Breadcrumb">
         <ol className="flex items-center gap-2 text-sm font-medium">
           <li>Employees</li>
           <li aria-hidden="true">
-            <Image src="/arrow-right.svg" alt="" width={8} height={8} />
+            <Image
+              src="/arrow-right.svg"
+              alt=""
+              width={8}
+              height={8}
+              className="dark:invert"
+            />
           </li>
           <li>{employee}</li>
         </ol>
       </nav>
 
-      <section className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-gray-200 pb-6">
+      <section className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-gray-200 dark:border-gray-700 pb-6">
         <div className="flex items-center gap-4">
           <Image
             src={mariam.image}
@@ -35,23 +40,25 @@ export default async function Profile({
           />
           <div className="flex flex-col gap-2">
             <h1 className="text-2xl font-semibold">{mariam.name}</h1>
-            <p className="flex items-center gap-2 text-sm text-gray-600">
+            <p className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
               <Image
                 src="/briefcase.svg"
                 alt=""
                 width={16}
                 height={16}
                 aria-hidden="true"
+                className="dark:invert"
               />
               <span>{mariam.jobTitle}</span>
             </p>
-            <p className="flex items-center gap-2 text-sm text-gray-600">
+            <p className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
               <Image
                 src="/gmail.svg"
                 alt=""
                 width={16}
                 height={16}
                 aria-hidden="true"
+                className="dark:invert"
               />
               <span>{mariam.email}</span>
             </p>

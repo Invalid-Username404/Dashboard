@@ -29,9 +29,9 @@ export function DashboardSideBar() {
   return (
     <aside
       ref={sidebarRef}
-      className="md:border md:border-gray-200 md:rounded-3xl md:flex md:flex-col md:gap-8 md:h-[90vh] md:my-[5vh] md:py-6 md:sticky md:top-0"
+      className=" md:border md:border-gray-200 md:rounded-3xl md:flex md:flex-col md:gap-8 md:h-[90vh] md:my-[5vh] md:py-6 md:sticky md:top-0"
     >
-      <div className="flex items-center justify-between p-4 md:p-0 md:mx-auto md:justify-center sticky top-0 bg-white z-10">
+      <div className="flex items-center justify-between p-4 md:p-0 md:mx-auto md:justify-center sticky top-0 z-10">
         <button
           className="md:hidden"
           onClick={() => setIsOpen(!isOpen)}
@@ -47,6 +47,7 @@ export function DashboardSideBar() {
         <Image
           src="/cyparta-logo.svg"
           alt="Cyparta Logo"
+          className="dark:invert"
           width={150}
           height={50}
           priority
@@ -55,9 +56,10 @@ export function DashboardSideBar() {
       <nav
         className={`${
           isOpen ? "block" : "hidden"
-        } md:block rounded-lg md:flex-grow md:overflow-y-auto absolute top-20 left-0  bg-white shadow-md rounded-bl-lg w-1/2 max-w-xs md:static md:shadow-none md:w-full md:max-w-none`}
+        } md:block rounded-lg md:flex-grow md:overflow-y-auto absolute top-20 left-0 
+        bg-white dark:bg-black shadow-md rounded-bl-lg w-1/2 max-w-xs md:static md:shadow-none md:w-full md:max-w-none`}
       >
-        <div className="p-4 md:p-0">
+        <div className="p-4 md:p-0  dark:bg-black dark:text-white">
           <DashboardItems admin={admin} />
         </div>
       </nav>
