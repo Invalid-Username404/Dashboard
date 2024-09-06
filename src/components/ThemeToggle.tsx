@@ -4,13 +4,18 @@ import { useTheme } from "@/contexts/ThemeContext";
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  function handleThemeToggle() {
+    toggleTheme();
+    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
+  }
+
   return (
     <button
-      onClick={toggleTheme}
+      onClick={handleThemeToggle}
       className="p-2 mx-4 rounded-full bg-light-secondary dark:text-white flex items-center gap-2"
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
     >
-      {theme === "light" ? "☀️" : <MoonSVG />} Theme
+      {document.documentElement.classList.contains("dark") ? <MoonSVG /> : "☀️"}
     </button>
   );
 }

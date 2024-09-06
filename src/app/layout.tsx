@@ -40,6 +40,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function() {
+              try {
+                var mode = localStorage.getItem('theme');
+                var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+                if (!mode && supportDarkMode) document.documentElement.classList.add('dark');
+                if (!mode) return;
+                document.documentElement.classList.add(mode);
+              } catch (e) {}
+            })();
+          `,
+          }}
+        />
+      </head>
       <ThemeProvider>
         <body className={`${cairo.className} bg-white dark:bg-black`}>
           {children}
