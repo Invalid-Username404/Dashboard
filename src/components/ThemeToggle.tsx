@@ -8,6 +8,8 @@ export function ThemeToggle() {
     toggleTheme();
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   }
+  let content =
+    window !== undefined ? theme === "light" ? "☀️" : <MoonSVG /> : null;
 
   return (
     <button
@@ -15,7 +17,7 @@ export function ThemeToggle() {
       className="p-2 mx-4 rounded-full bg-light-secondary dark:text-white flex items-center gap-2"
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
     >
-      {document.documentElement.classList.contains("dark") ? <MoonSVG /> : "☀️"}
+      {content} Theme
     </button>
   );
 }
@@ -28,12 +30,12 @@ const MoonSVG = () => {
       viewBox="0 0 24 24"
       fill="currentColor"
       stroke="currentColor"
-      stroke-width="2"
+      strokeWidth="2"
     >
       <path
         d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
