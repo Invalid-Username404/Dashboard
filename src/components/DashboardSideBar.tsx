@@ -42,6 +42,7 @@ export function DashboardSideBar() {
             alt={isOpen ? "close" : "menu"}
             width={24}
             height={24}
+            className="dark:invert"
           />
         </button>
         <Image
