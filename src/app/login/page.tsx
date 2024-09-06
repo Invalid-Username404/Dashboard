@@ -14,6 +14,7 @@ export default function Login() {
         alt="Cyparta Logo"
         width={200}
         height={200}
+        className="dark:invert"
       />
       <LoginForm action={handleLogin} />
     </div>

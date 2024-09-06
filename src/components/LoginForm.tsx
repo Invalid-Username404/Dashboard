@@ -37,7 +37,7 @@ export function LoginForm({
 
   return (
     <form
-      className=" flex w-full max-w-md gap-8 flex-col items-center justify-center border border-gray-200 rounded-lg p-6 sm:p-10"
+      className=" flex w-full max-w-md gap-8 flex-col items-center justify-center border border-gray-200 rounded-lg p-6 sm:p-10 dark:text-white "
       onSubmit={async (e) => {
         e.preventDefault();
         await onSubmit(new FormData(e.currentTarget));
