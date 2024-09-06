@@ -29,7 +29,7 @@ export function DashboardSideBar() {
   return (
     <aside
       ref={sidebarRef}
-      className=" md:border md:border-gray-200 md:rounded-3xl md:flex md:flex-col md:gap-8 md:h-[90vh] md:my-[5vh] md:py-6 md:sticky md:top-0"
+      className=" md:border bg-white dark:bg-black md:border-gray-200 md:rounded-3xl md:flex md:flex-col md:gap-8 md:h-[90vh] md:my-[5vh] md:py-6 md:sticky md:top-0"
     >
       <div className="flex items-center justify-between p-4 md:p-0 md:mx-auto md:justify-center sticky top-0 z-10">
         <button
