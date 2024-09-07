@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { PasswordInput } from "@/components/PasswordInput";
 import { useRouter } from "next/navigation";
-
+import { Loading } from "@/components/Loading";
 type Result = {
   success: boolean;
   error?: string;
@@ -15,6 +15,7 @@ export function LoginForm({
 }) {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState(false);
   const router = useRouter();
 
   const onSubmit = async (formData: FormData) => {
@@ -23,8 +24,11 @@ export function LoginForm({
     try {
       const result = await action(formData);
       if (result.success) {
-        // This should redirect to dashboard but I wanted to redirect you to mariam-ali profile page like in the mockup
-        router.push("/dashboard/employees/mariam-ali/profile");
+        setLoginSuccess(true);
+        // Delay the redirect to show the loading state
+        setTimeout(() => {
+          router.push("/dashboard/employees/mariam-ali/profile");
+        }, 1000);
       } else {
         setError(result.error || "Invalid email or password");
       }
@@ -34,7 +38,12 @@ export function LoginForm({
       setIsLoading(false);
     }
   };
-
+  if (loginSuccess) {
+    return(
+      
+        <Loading />)
+      
+  }
   return (
     <form
       className=" flex w-full max-w-md gap-8 flex-col items-center justify-center border border-gray-200 rounded-lg p-6 sm:p-10 dark:text-white "
