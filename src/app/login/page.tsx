@@ -10,7 +10,7 @@ export default function Login() {
   return (
     <div className="bg-primary flex flex-col items-center justify-evenly h-screen p-4 sm:p-8">
       <p className="text-orange-600  text-2xl font-bold">
-        Pssst... You can use the following credentials:
+        You can use the following credentials:
         <br />
         <span className="text-red-600  text-xl font-bold">
           user: test@task.com <br /> password: 123456
