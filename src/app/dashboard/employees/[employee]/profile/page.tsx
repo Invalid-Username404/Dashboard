@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { EditButton } from "@/components/EditButton";
 import { ProfileInformation } from "@/components/ProfileInformation";
-import { getProfile } from "@/utils/api/getProfile";
 
 export default async function Profile({
   params,
@@ -9,7 +8,6 @@ export default async function Profile({
   params: { employee: string };
 }) {
   const { employee } = params;
-  const profile = await getProfile();
 
   return (
     <div className="flex flex-col gap-6 text-black dark:text-white">
